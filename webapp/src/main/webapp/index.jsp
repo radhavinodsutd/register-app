@@ -33,7 +33,7 @@
 
    <h1> Thank You </h1>
    <br>
-   <h1> Happy Learning. See You Again. </h1>
+   <h1> Happy Learning. </h1>
    <br>
    <h1> Atomic degree change at a time, you can make amazing progress. </h1>   
 </form>
