@@ -74,17 +74,6 @@ pipeline {
             '''
         }
       }
-    post {
-    always {
-        script {
-            sh '''
-                docker run --rm \
-                -v $HOME/.cache/trivy:/root/.cache/ \
-                aquasec/trivy:latest clean --all
-            '''
-          }
-        }
-      }
     }
     
     stage ('Cleanup Artifacts') {
@@ -96,6 +85,14 @@ pipeline {
       }
     }
     
+    stage('Docker System Prune') {
+      steps {
+        script {
+            sh 'docker system prune -f'
+        }
+      }
+   }
+    
     stage ("Trigger CD Pipeline") {
       steps {
         script {
@@ -104,4 +101,16 @@ pipeline {
       }
     }
   }
+  
+  post {
+    always {
+        script {
+            sh '''
+                docker run --rm \
+                -v $HOME/.cache/trivy:/root/.cache/ \
+                aquasec/trivy:latest clean --all
+            '''
+          }
+       }
+    }
 }
