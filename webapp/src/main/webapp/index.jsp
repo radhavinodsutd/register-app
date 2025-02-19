@@ -35,5 +35,5 @@
    <br>
    <h1> Happy Learning. See You Again. </h1>
    <br>
-   <h1> One degree change at a time, you can make amazing progress. </h1>   
+   <h1> Atomic degree change at a time, you can make amazing progress. </h1>   
 </form>
